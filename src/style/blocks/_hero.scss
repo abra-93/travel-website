@@ -1,0 +1,244 @@
+.hero {
+  // .hero__wrapper
+  &__wrapper {
+    width: 100%;
+    // max-height: 800px;
+    height: 100%;
+    background-image: url("../img/hero-banner.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    border: 1px solid transparent;
+    position: relative;
+  }
+  // .hero__content
+  &__content {
+    margin: 8vw 8vw 15vw;
+    @include _600 {
+      margin: 4vw 4vw 6vw;
+    }
+  }
+  // .hero__title
+  &__title {
+    font-family: $notoFontsBold;
+    font-size: 60px;
+    color: $tcBlack;
+    margin-bottom: 60px;
+    @include _600 {
+      font-size: 30px;
+    }
+  }
+  // .hero__button
+  &__button {
+  }
+  // .hero__footer
+  &__footer {
+    width: 100%;
+    // height: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 70px;
+  }
+}
+
+.slider {
+  // .slider__nav
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    // gap: 30px;
+    flex: 1 1 35%;
+    padding-right: 30px;
+    @include _1060 {
+      background: #fff;
+      padding: 10px 30px;
+    }
+  }
+  //.slider__nav-inner{
+  &__nav-inner {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 18px;
+    min-width: 320px;
+    @include _480 {
+      min-width: 230px;
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  // .slider__prev
+  &__prev {
+    background: $orangeColor;
+  }
+  // .slider__btn
+  &__btn {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // .slider__next
+  &__next {
+    border: 1px solid $orangeOpacity;
+  }
+  // .slider__line
+  &__line {
+    height: 4px;
+    width: 100%;
+    display: block;
+    background: $orangeOpacity;
+  }
+  // .slider__count
+  &__count {
+    font-size: 24px;
+    color: $orangeColor;
+  }
+}
+.form {
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  flex: 1 1 65%;
+  box-shadow: 0px 10px 30px 5px rgba(219, 200, 197, 0.2);
+  flex-wrap: wrap;
+  gap: 20px;
+  @include _600 {
+    gap: 0;
+  }
+  // .form__item
+  &__item {
+    width: 150px;
+    position: relative;
+    @include _600 {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  // .form__item-title
+  &__item-title {
+    margin-bottom: 20px;
+    color: #7a7878;
+    font-family: $notoFontsReg;
+  }
+  //.form__elem
+  &__elem {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    font-family: $notoFontsReg;
+    color: $orangeColor;
+    font-weight: 600;
+    outline: none;
+    border-bottom: 2px solid $orangeOpacity;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+  // .form__btn
+  &__btn {
+    @include _600 {
+      width: 100%;
+    }
+  }
+}
+.date {
+  &::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url("/img/calender.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+  }
+}
+
+.range {
+  display: flex;
+  // justify-content: space-between;
+  position: relative;
+  &::after {
+    content: "$";
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__item {
+    display: none;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 1px 10px 0 #80808080;
+    border: 1px solid #00000042;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px;
+
+    input[type="range"] {
+      width: 90%;
+      position: absolute;
+      &:nth-child(1) {
+        &::-webkit-slider-thumb::before {
+          background-color: red;
+        }
+      }
+      &:nth-child(2) {
+        background: none;
+
+        &::-webkit-slider-thumb::before {
+          background-color: grey;
+        }
+      }
+      box-sizing: border-box;
+      appearance: none;
+      margin: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 1px;
+      outline: none;
+      background: linear-gradient($orangeColor, $orangeColor) no-repeat center;
+      background-size: 100% 2px;
+      pointer-events: none;
+      &::-webkit-slider-thumb {
+        height: 15px;
+        width: 15px;
+        border-radius: 20px;
+        background-color: $orangeColor;
+        position: relative;
+        margin: 5px 0;
+        /* Add some margin to ensure box shadow is shown */
+        cursor: pointer;
+        appearance: none;
+        pointer-events: all;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+        &::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 13px;
+          left: 100%;
+          width: 2000px;
+          height: 2px;
+        }
+      }
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.navActive {
+  display: flex !important;
+}

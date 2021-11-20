@@ -1,0 +1,79 @@
+.download {
+  margin-top: 180px;
+  // .download__wrap
+  &__wrap {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #cefefe 0%, #ddf181 100%);
+    border-radius: 5px;
+  }
+  // .download__item
+  &__item {
+    flex: 1 1 350px;
+  }
+  &__content-wrap {
+    padding: 8vw 5vw;
+  }
+  &__title {
+    font-family: $notoFontsReg;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    @include _600 {
+      font-size: 28px;
+    }
+  }
+  &__btn {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+.btn {
+  &__google {
+    width: 150px;
+    img {
+      width: 100%;
+    }
+  }
+  &__apple {
+    width: 150px;
+    img {
+      width: 100%;
+    }
+  }
+}
+.images {
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 5vw;
+  &__plane {
+    width: 270px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    img {
+      width: 100%;
+    }
+  }
+  &__app {
+    max-width: 370px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    bottom: -20px;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+}

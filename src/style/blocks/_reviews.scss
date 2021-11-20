@@ -1,0 +1,202 @@
+.reviews {
+  margin-top: 180px;
+  // .reviews__wrap
+  &__wrap {
+    position: relative;
+    &::before {
+      content: "";
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #9cd9ec59;
+      box-shadow: 0 0 30px 30px #9cd9ec59;
+      border-radius: 50px;
+      z-index: -1;
+    }
+    // &::after {
+    //   content: "";
+    //   width: 100px;
+    //   height: 100px;
+    //   position: absolute;
+    //   top: 150px;
+    //   left: 100px;
+    //   background-image: url("../img/reviews1.png");
+    //   background-size: contain;
+    // }
+  }
+  // .reviews__title
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    @include _600 {
+      font-size: 26px;
+    }
+  }
+  // .reviews__content
+  &__content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 5%;
+    position: relative;
+    box-shadow: 0px 20px 30px rgba(227, 202, 202, 0.3);
+    background: #fff;
+    display: block;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 10px;
+      background: $orangeColor;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      background: #fff8f8;
+      border-radius: 100%;
+      z-index: -1;
+    }
+  }
+  &__fon-img {
+    position: absolute;
+    &:nth-child(1) {
+      width: 90px;
+      height: 90px;
+      top: 10px;
+      right: -300px;
+    }
+    &:nth-child(2) {
+      width: 70px;
+      height: 70px;
+      top: 150px;
+      right: -120px;
+    }
+    &:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      bottom: 31px;
+      right: -280px;
+    }
+
+    &:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      top: 70px;
+      left: -150px;
+    }
+    &:nth-child(5) {
+      width: 80px;
+      height: 80px;
+      top: 170px;
+      left: -290px;
+    }
+    &:nth-child(6) {
+      width: 80px;
+      height: 80px;
+      top: 150px;
+      left: -130px;
+    }
+    &:nth-child(7) {
+      width: 80px;
+      height: 80px;
+      bottom: 10px;
+      left: -250px;
+    }
+  }
+}
+
+.review {
+  // .review__profile
+  &__profile {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  // .review__comment
+  &__comment {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: $Psans;
+    color: #a79997;
+    margin-bottom: 30px;
+  }
+  // .review__dots
+  &__dots {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    div {
+      width: 10px;
+      height: 10px;
+      background: #8080808a;
+      border-radius: 10px;
+      position: relative;
+    }
+  }
+}
+.profile {
+  // .profile__img
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .profile__user
+  &__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  // .profile__name
+  &__name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    @include _600 {
+      font-size: 18px;
+    }
+  }
+  // .profile__speciality
+  &__speciality {
+    color: $orangeColor;
+    font-family: $Psans;
+    font-weight: 600;
+    @include _600 {
+      font-size: 12px;
+    }
+  }
+}
+
+.dot-active {
+  background: $orangeColor !important;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ff715b;
+    border-radius: 100%;
+  }
+}

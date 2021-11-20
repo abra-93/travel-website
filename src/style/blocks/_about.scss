@@ -1,0 +1,124 @@
+.about {
+  margin-top: 180px;
+  // .about__wrap
+  &__wrap {
+    // height: 800px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    width: 90%;
+    @include _992 {
+      width: 100%;
+    }
+  }
+  // .about__img
+  &__img {
+    // max-width: 570px;
+    // max-height: 700px;
+    position: relative;
+    // margin-right: 80px;
+    flex: 1 1 220px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: "";
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      background: #ffca45;
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      background-image: url("../img/pattern.svg");
+      z-index: -1;
+    }
+  }
+  // .about__content
+  &__content {
+    flex: 1 1 500px;
+  }
+}
+
+.content {
+  // .content__title
+  &__title {
+    max-width: 600px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    @include _600 {
+      font-size: 22px;
+      display: block;
+      text-align: center;
+    }
+  }
+  // .content__desc
+  &__desc {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+
+    &:not(:last-child) {
+      border-bottom: 2px solid $orangeOpacity;
+    }
+  }
+}
+.desc {
+  // .desc__img
+  &__img {
+    min-width: 50px;
+    min-height: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .desc__head
+  &__head {
+    max-width: 600px;
+    display: inline;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    height: auto;
+    position: relative;
+    @include _600 {
+      font-size: 18px;
+    }
+  }
+  // .desc__over
+  &__over {
+    // height: 0;
+    font-size: 16px;
+    color: $tcGray;
+    font-family: $Psans;
+    line-height: 24px;
+    font-weight: normal;
+    display: none;
+    opacity: 0;
+  }
+}
+
+.show {
+  height: auto;
+  padding-top: 20px;
+  display: block;
+  opacity: 1;
+}
